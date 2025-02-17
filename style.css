@@ -88,8 +88,14 @@ body {
 }
 
 .button-container {
+    display: flex;
     width: 300px;
     justify-content: center;
+}
+
+.imagem-icone {
+    width: 32px;
+   
 }
 
 /* Estilos de entrada de texto */

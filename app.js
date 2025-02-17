@@ -4,22 +4,21 @@ let amigos = [];
 // Declara uma função chamada adicionarAmigo(), que será chamada quando o botão "Adicionar" for clicado.
 function adicionarAmigo() {
     let input = document.getElementById("amigo");
-    let nome = input.value.trim(); // Pega o valor do campo de entrada e remove espaços em branco no início.
+    let nome = input.value.trim(); 
 
-    if (nome === "") { // Verifica se o usuário não digitou nada ou apenas espaços em branco.
-        alert("Por favor, insira um nome."); // Se o campo estiver vazio, um alerta aparece informando o usuário.
-        return; // Faz a função parar a execução para que o nome não seja adicionado.
+    if (nome === "") { 
+        alert("Por favor, insira um nome."); 
+        return;
     }
 
-    // Verifica se o nome já existe na lista de amigos.
     if (amigos.includes(nome)) {
         alert("Este nome já foi adicionado. Por favor, insira um nome diferente.");
         return;
     }
 
-    amigos.push(nome); // Se o nome for válido, ele é adicionado ao array amigos usando o método .push().
-    atualizarLista(); // Chama a função responsável por atualizar a exibição da lista de amigos na página.
-    input.value = ""; // Limpa o campo de entrada após adicionar o nome.
+    amigos.push(nome); 
+    atualizarLista(); 
+    input.value = ""; 
 }
 
 // Função para atualizar a lista de amigos na tela.
@@ -53,9 +52,7 @@ function sortearAmigo() {
     if (amigos.length === 0) { // Valida se há amigos na lista antes do sorteio.
         alert("Nenhum amigo disponível para sorteio."); // Exibe um alerta.
         return; // Interrompe a execução.
-    }
-
-    
+    }  
     let indiceSorteado = Math.floor(Math.random() * amigos.length); // Gera um número aleatório entre 0 e tamanho do array.
     let amigoSorteado = amigos[indiceSorteado]; // Obtém o nome correspondente ao índice sorteado.
 
