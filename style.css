@@ -177,3 +177,9 @@ ul {
     border-color: #b12222;
     cursor: pointer;
 }
+
+h6 {
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    background-color: var(--color-secondary);
+}
