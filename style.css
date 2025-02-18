@@ -89,8 +89,9 @@ body {
 
 .button-container {
     display: flex;
-    width: 300px;
     justify-content: center;
+    width: 300px;
+    
 }
 
 .imagem-icone {
@@ -168,11 +169,11 @@ ul {
 }
 
 .button-remove {
-    background-color: red;
+    background-color: #0f8d0f;
     color: white;
     font-size: 12px;
     margin-left: 10px;
     padding: 5px 10px;
-    border: none;   
+    border-color: #b12222;
     cursor: pointer;
 }

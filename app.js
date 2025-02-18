@@ -1,24 +1,31 @@
 // Declara um array vazio para armazenar os nomes dos amigos.
 let amigos = [];
-
-// Declara uma função chamada adicionarAmigo(), que será chamada quando o botão "Adicionar" for clicado.
+// Função para adicionar amigos na lista
 function adicionarAmigo() {
     let input = document.getElementById("amigo");
-    let nome = input.value.trim(); 
+    let nome = input.value.trim();
+    // Verifica se o campo está vazio.
+    if (nome === "") {
+        alert("Por favor, insira um nome.");
+        return;
+    }
 
-    if (nome === "") { 
-        alert("Por favor, insira um nome."); 
+    // Verifica se o nome contém apenas letras.
+    if (/[^a-zA-Z]/.test(nome)) {
+        alert("Por favor, insira apenas letras no nome.");
+        input.value = "";
         return;
     }
 
     if (amigos.includes(nome)) {
         alert("Este nome já foi adicionado. Por favor, insira um nome diferente.");
+        input.value = "";
         return;
     }
 
-    amigos.push(nome); 
-    atualizarLista(); 
-    input.value = ""; 
+    amigos.push(nome);
+    atualizarLista();
+    input.value = "";
 }
 
 // Função para atualizar a lista de amigos na tela.
@@ -49,16 +56,20 @@ function removerAmigo(index) {
 
 // Função para sortear amigo secreto.
 function sortearAmigo() {
-    if (amigos.length === 0) { // Valida se há amigos na lista antes do sorteio.
+    if (amigos.length == 0) { // Valida se há amigos na lista antes do sorteio.
         alert("Nenhum amigo disponível para sorteio."); // Exibe um alerta.
         return; // Interrompe a execução.
-    }  
+    }
+
+    if (amigos.length % 2 !== 0) { // aceita somente uma quantidade de nomes pares.
+        alert("Favor inserir mais um nome!!!");
+        return;
+    }
+
     let indiceSorteado = Math.floor(Math.random() * amigos.length); // Gera um número aleatório entre 0 e tamanho do array.
     let amigoSorteado = amigos[indiceSorteado]; // Obtém o nome correspondente ao índice sorteado.
-
     document.getElementById("resultado").innerHTML = `Amigo sorteado: <strong>${amigoSorteado}</strong>`; // Exibe o nome sorteado.
 }
-
 // Função para resetar a lista de amigos e o resultado do sorteio.
 function resetar() {
     amigos = [];
