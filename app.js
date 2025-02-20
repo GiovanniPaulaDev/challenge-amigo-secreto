@@ -26,6 +26,7 @@ function adicionarAmigo() {
     amigos.push(nome);
     atualizarLista();
     input.value = "";
+
 }
 
 // Função para atualizar a lista de amigos na tela.
@@ -38,8 +39,9 @@ function atualizarLista() {
         li.textContent = amigos[i]; // Define o texto do <li> como o nome do amigo.
 
         // Cria um botão de remover para cada amigo na lista.
-        let botaoRemover = document.createElement("button");
+        let botaoRemover = document.createElement("img");
         botaoRemover.textContent = "Remover"; // Define o texto do botão como "Remover".
+        botaoRemover.src = "assets/cruz.png";
         botaoRemover.classList.add("button-remove"); // Adiciona uma classe CSS para o botão de remover.
         botaoRemover.onclick = () => removerAmigo(i); // Adiciona a função de remoção do amigo ao botão.
 
@@ -69,7 +71,9 @@ function sortearAmigo() {
     let indiceSorteado = Math.floor(Math.random() * amigos.length); // Gera um número aleatório entre 0 e tamanho do array.
     let amigoSorteado = amigos[indiceSorteado]; // Obtém o nome correspondente ao índice sorteado.
     document.getElementById("resultado").innerHTML = `Amigo sorteado: <strong>${amigoSorteado}</strong>`; // Exibe o nome sorteado.
+
 }
+
 // Função para resetar a lista de amigos e o resultado do sorteio.
 function resetar() {
     amigos = [];
