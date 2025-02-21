@@ -25,6 +25,7 @@ já realizei diversos cursos na Alura e gosto muita da plataforma.
 - Não e permitido o campo ficar vazio, a quantidade de entrada de nomes somente pares, senão alguem vai ficar sem ganhar "presente"🤣.
 - Essas entrada aparece na tela do site. Apos essas entrada e feito um sorteio dos participante através do botão "sortear", esse nome dos sorteados aparecem tambem na tela.
 - Também foi criado um botão reiniciar para começar inserir novos nomes e refazer o sorteio.
+- Link para acessar a página: https://giovannipauladev.github.io/challenge-amigo-secreto/
 
 <p alight="center">
     <img width="460" height="300" src="assets/AmigoSecreto-GoogleChrome2025-02-2021-46-00-ezgif.com-video-to-gif-converter.gif">
